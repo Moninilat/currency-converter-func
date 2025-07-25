@@ -4,7 +4,7 @@ import httpx
 
 app = FastAPI()
 
-@app.post("/currency-converter")
+@app.post("/currency_converter")
 async def currency_converter(req: Request):
     body = await req.json()
     input_data = body.get("input")
@@ -26,7 +26,7 @@ async def currency_converter(req: Request):
     except Exception as e:
         return {"output": f"Error: {str(e)}"}
 
-@app.get("/currency-converter")
+@app.get("/currency_converter")
 def docs():
     return {
         "name": "currency-converter",
